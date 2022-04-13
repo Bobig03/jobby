@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block content %}
+    <h1 class="mt-3">{% trans "Job postings" %}</h1>
+    <ul class="list-group mt-5" >
+      {% for job_posting in job_postings %}
+      <li
+      class="list-group-item">
+        <a href="{% url 'job_posting_detail' job_posting.id %}">{{ job_posting.title }} - {{ job_posting.company }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+{% endblock %}

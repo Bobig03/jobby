@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block content %}
+<div class="card mt-4">
+  <div class="card-body">
+    <h1 class="card-title">{{ job_posting.title }}</h1>
+    <a href="{% url 'company_detail' job_posting.company.id %}">
+      <h6 class="card-subtitle mb-2 text-muted">
+        {{ job_posting.company }}
+      </h6>
+    </a>
+    <p class="card-text">{{ job_posting.description }}</p>
+    <a
+      href="{% url 'category_detail' job_posting.category.id %}"
+      class="card-link"
+      ><i>{{ job_posting.category }}</i></a
+    >
+  </div>
+</div>
+{% endblock content %}

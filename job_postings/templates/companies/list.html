@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block content %}
+    <h1 class="mt-3">{% trans "Companies" %}</h1>
+    <ul class="list-group mt-5" >
+      {% for company in companies %}
+      <li
+      class="list-group-item">
+        <a href="{% url 'company_detail' company.id %}">{{ company.name }} </a>
+      </li>
+      {% endfor %}
+    </ul>
+{% endblock %}
