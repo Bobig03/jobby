@@ -1,0 +1,29 @@
+{% load i18n static %}
+
+<footer class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-4 col-lg">
+        <a class="footer-brand" href="/">
+          <span>Jobby</span>
+        </a>
+        <small class="copyright">&copy; 2022 - {% now "Y" %} </small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>
+          <a href="{% url 'company_list' %}">{% trans "Companies" %}</a>
+        </h5>
+      </div>
+      <div class="col-6 col-md">
+        <h5>
+          <a href="{% url 'job_posting_list' %}">{% trans "Job Postings" %}</a>
+        </h5>
+      </div>
+      <div class="col-6 col-md">
+        <h5>
+          <a href="{% url 'category_list' %}">{% trans "Categories" %}</a>
+        </h5>
+      </div>
+    </div>
+  </div>
+</footer>
