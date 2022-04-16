@@ -21,4 +21,5 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = i18n_patterns(
     path('', include('job_postings.urls')),
     path('admin/', admin.site.urls),
+    path("i18n/", include("django.conf.urls.i18n")),
 )
