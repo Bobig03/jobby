@@ -1,14 +1,28 @@
 {% extends "base.html" %}
-{% load static i18n %}
+{% load static i18n thumbnail %}
 
 {% block content %}
-    <h1 class="mt-3">{% trans "Companies" %}</h1>
-    <ul class="list-group mt-5" >
-      {% for company in companies %}
-      <li
-      class="list-group-item">
-        <a href="{% url 'company_detail' company.id %}">{{ company.name }} </a>
-      </li>
-      {% endfor %}
-    </ul>
+  <h1 class="mt-3">{% trans "Companies" %}</h1>
+
+  <div class="d-flex justify-content-center flex-wrap">
+    {% for company in companies %}
+      <div class="card m-2" style="width: 500px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <a href="{% url 'company_detail' company.id %}">
+              <img src="{% thumbnail company.logo 160x160 crop %}" alt="{{ company.title }}">
+            </a>
+          </div>
+          <div class="col">
+            <div class="card-body">
+              <a href="{% url 'company_detail' company.id %}">
+                <h5 class="card-title">{{ company.name }}</h5>
+              </a>
+              <p>{{ company.short_description | truncatechars:100 }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 {% endblock %}

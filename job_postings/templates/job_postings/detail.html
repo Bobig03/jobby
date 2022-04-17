@@ -10,7 +10,23 @@
         {{ job_posting.company }}
       </h6>
     </a>
-    <p class="card-text">{{ job_posting.description | safe }}</p>
+
+    {% if job_posting.location %}
+      <p class="mb-0"><i>
+        {% trans "Location" %}:
+        {{ job_posting.location }}
+      </i></p>
+
+    {% endif %}
+
+    {% if job_posting.salary %}
+      <p class="mb-0"><i>
+        {% trans "Salary" %}:
+        {{ job_posting.salary }}
+      </i></p>
+    {% endif %}
+
+    <p class="card-text mt-2">{{ job_posting.description | safe }}</p>
     {% for category in job_posting.categories.all %}
     <a
       href="{% url 'category_detail' category.id %}"

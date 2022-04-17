@@ -2,11 +2,31 @@
 {% load static i18n %}
 
 {% block content %}
-    <h1>{{ category.name }}</h1>
-    {% for job_posting in category_postings %}
-    <li
-    class="list-group-item">
-      <a href="{% url 'job_posting_detail' job_posting.id %}">{{ job_posting.title }} </a>
-    </li>
-    {% endfor %}
+  <h1>{{ category.name }}</h1>
+
+  {% if category_postings.count %}
+    <h2>{% trans "Job postings" %}</h2>
+    <div class="d-flex justify-content-center flex-wrap">
+      {% for job_posting in category_postings %}
+        <div class="card m-2" style="width: 26rem;">
+          <div class="card-body">
+            <a href="{% url 'job_posting_detail' job_posting.id %}">
+              <h5 class="card-title">{{ job_posting.title }}</h5>
+            </a>
+            {% if job_posting.location %}
+            <p class="card-text">{{ job_posting.location }}</p>
+            {% endif %}
+
+            {% if job_posting.salary %}
+            <p class="card-text">{{ job_posting.salary }}</p>
+            {% endif %}
+
+            {% for category in job_posting.categories.all %}
+            <a href="{% url 'category_detail' category.id %}" class="card-link">{{ category.name }}</a>,
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
 {% endblock %}

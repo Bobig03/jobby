@@ -5,8 +5,7 @@
     <h1 class="mt-3">{% trans "Categories" %}</h1>
     <ul class="list-group mt-5" >
       {% for category in categories %}
-      <li
-      class="list-group-item">
+      <li class="list-group-item">
         <a href="{% url 'category_detail' category.id %}">{{ category.name }} </a>
       </li>
       {% endfor %}
