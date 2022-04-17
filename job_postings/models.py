@@ -1,13 +1,15 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from ckeditor_uploader.fields import RichTextUploadingField
+
 
 class Company(models.Model):
     name = models.CharField(_("Name"), max_length=200)
     email = models.EmailField(_("E-mail"))
     phone = models.CharField(_("Phone number"), max_length=15)
     address = models.CharField(_("Address"), max_length=200)
-    description = models.TextField(_("Description"))
+    description = RichTextUploadingField(_("Description"))
     created_at = models.DateTimeField(_("Created at"), auto_now_add=True)
     updated_at = models.DateTimeField(_("Updated at"), auto_now=True)
 
@@ -17,6 +19,7 @@ class Company(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Category(models.Model):
     name = models.CharField(_("Name"), max_length=200)
@@ -30,22 +33,22 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
 class JobPosting(models.Model):
     title = models.CharField(_("Title"), max_length=200)
-    description = models.TextField(_("Description"))
+    description = RichTextUploadingField(_("Description"))
+
     company = models.ForeignKey(
         Company,
         related_name="postings",
         on_delete=models.CASCADE,
         verbose_name=_("Company"),
     )
-    category = models.ForeignKey(
+    categories = models.ManyToManyField(
         Category,
         related_name="postings",
-        on_delete=models.SET_NULL,
-        verbose_name=_("Category"),
+        verbose_name=_("Categories"),
         blank=True,
-        null=True,
     )
     created_at = models.DateTimeField(_("Created at"), auto_now_add=True)
     updated_at = models.DateTimeField(_("Updated at"), auto_now=True)

@@ -10,12 +10,14 @@
         {{ job_posting.company }}
       </h6>
     </a>
-    <p class="card-text">{{ job_posting.description }}</p>
+    <p class="card-text">{{ job_posting.description | safe }}</p>
+    {% for category in job_posting.categories.all %}
     <a
-      href="{% url 'category_detail' job_posting.category.id %}"
+      href="{% url 'category_detail' category.id %}"
       class="card-link"
-      ><i>{{ job_posting.category }}</i></a
+      ><i>{{ category }}</i></a
     >
+    {% endfor %}
   </div>
 </div>
 {% endblock content %}

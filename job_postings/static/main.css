@@ -2,6 +2,33 @@ a {
   text-decoration: none;
 }
 
+.intro {
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 1rem;
+}
+
+.accentItems .card {
+  height: 200px !important;
+}
+
+.carousel-inner {
+  border-radius: 50px;
+}
+
+.carousel-caption {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.carousel-caption a {
+  color: #fff;
+}
+
 footer a {
   color: #555;
 }

@@ -4,9 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "==4"
+django = "==3.2.13"
+django-ckeditor = "*"
+django-filer = "*"
 
 [dev-packages]
+black = "*"
 
 [requires]
 python_version = "3.10"
+
+[pipenv]
+allow_prereleases = true

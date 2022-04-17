@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static i18n thumbnail %}
+
+{% block content %}
+  <div class="intro mt-5 mb-5">
+    <h1 class="mt-3">Jobby</h1>
+
+    <h2>
+      {% trans "Welcome to Jobby! Simple and easy to use job posting platform" %}
+    </h2>
+  </div>
+
+  {% include "home/carousel.html" %}
+
+  <div class="container accentItems">
+    <div class="row">
+      {% for item in accent_items %}
+        <div class="col-lg-4 col-6 px-2">
+          <div class="card mt-3 mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{% thumbnail item.image 150x150 crop %}" class="img-fluid rounded-start" alt="{{ item.title }}">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.title }}</h5>
+                  <p class="card-text">{{ item.subtitle }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

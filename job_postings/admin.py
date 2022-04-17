@@ -20,7 +20,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(models.JobPosting)
 class JobPostingAdmin(admin.ModelAdmin):
-    list_filter = ("title", "company", "category", "created_at", "updated_at")
-    list_display = ("title", "company", "category", "created_at", "updated_at")
+    list_filter = ("title", "company", "categories", "created_at", "updated_at")
+    list_display = ("title", "company", "created_at", "updated_at")
     list_per_page = 15
     search_fields = ("title", "description")
