@@ -1,36 +1,15 @@
 {% extends "base.html" %}
-{% load static i18n thumbnail %}
+{% load i18n %}
 
 {% block content %}
   <div class="intro mt-5 mb-5">
     <h1 class="mt-3">Jobby</h1>
 
     <h2>
-      {% trans "Welcome to Jobby! Simple and easy to use job posting platform" %}
+      {% trans "Welcome to Jobby! Simple and easy to use job posting platform." %}
     </h2>
   </div>
 
   {% include "home/carousel.html" %}
-
-  <div class="container accentItems mt-3 mb-3">
-    <div class="d-flex justify-content-center flex-wrap">
-      {% for item in accent_items %}
-        <div class="card m-2 col">
-          <div class="row g-0">
-            <div class="col-md-6 col-5">
-              <img src="{% thumbnail item.image 150x150 crop %}" alt="{{ item.title }}">
-            </div>
-            <div class="col">
-              <div class="card-body">
-                <a href="{{ item.link }}" alt="{{ item.title}}">
-                  <h5 class="card-title">{{ item.title }}</h5>
-                </a>
-                <p class="card-text">{{ item.subtitle }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
+  {% include "home/accents.html" %}
 {% endblock %}

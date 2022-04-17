@@ -1,6 +1,6 @@
 {% load static i18n %}
 
-<div id="homePageCarousel" class="carousel slide" data-bs-ride="carousel">
+<section id="homePageCarousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     {% for item in carousel_items %}
     <button type="button" data-bs-target="#homePageCarousel" data-bs-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %} aria-current="true" aria-label="{{ item.title }}"></button>
@@ -25,4 +25,4 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">{% trans "Next" %}</span>
   </button>
-</div>
+</section>

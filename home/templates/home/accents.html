@@ -1,0 +1,23 @@
+{% load static i18n thumbnail %}
+
+<section class="container accentItems mt-3 mb-3">
+  <div class="d-flex justify-content-center flex-wrap">
+    {% for item in accent_items %}
+      <div class="card m-2 p-3">
+        <div class="row g-0">
+          <div class="col-md-6 col-5">
+            <img src="{% thumbnail item.image 150x150 crop %}" alt="{{ item.title }}">
+          </div>
+          <div class="col">
+            <div class="card-body">
+              <a href="{{ item.link }}" alt="{{ item.title}}">
+                <h5 class="card-title">{{ item.title }}</h5>
+              </a>
+              <p class="card-text">{{ item.subtitle }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

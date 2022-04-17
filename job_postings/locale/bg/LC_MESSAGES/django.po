@@ -8,66 +8,112 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-03 20:41+0000\n"
+"POT-Creation-Date: 2022-04-24 11:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: job_postings/models.py:6 job_postings/models.py:21
+
+#: .\job_postings\models.py:9 .\job_postings\models.py:31
 msgid "Name"
 msgstr "Име"
 
-#: job_postings/models.py:7
+#: .\job_postings\models.py:13
+#: .\job_postings\templates\companies\detail.html:8
 msgid "E-mail"
 msgstr ""
 
-#: job_postings/models.py:8
+#: .\job_postings\models.py:14
 msgid "Phone number"
 msgstr "Телефонен номер"
 
-#: job_postings/models.py:9 job_postings/models.py:34
+#: .\job_postings\models.py:15
+msgid "Web site"
+msgstr "Уеб сайт"
+
+#: .\job_postings\models.py:16
+#: .\job_postings\templates\companies\detail.html:10
+msgid "Address"
+msgstr "Адрес"
+
+#: .\job_postings\models.py:17
+msgid "Short description"
+msgstr "Кратко описание"
+
+#: .\job_postings\models.py:18 .\job_postings\models.py:47
 msgid "Description"
 msgstr "Описание"
 
-#: job_postings/models.py:10 job_postings/models.py:22
-#: job_postings/models.py:49
+#: .\job_postings\models.py:19 .\job_postings\models.py:32
+#: .\job_postings\models.py:61
 msgid "Created at"
 msgstr "Създадено на"
 
-#: job_postings/models.py:11 job_postings/models.py:23
-#: job_postings/models.py:50
+#: .\job_postings\models.py:20 .\job_postings\models.py:33
+#: .\job_postings\models.py:62
 msgid "Updated at"
 msgstr "Обновено на"
 
-#: job_postings/models.py:14 job_postings/models.py:39
+#: .\job_postings\models.py:23 .\job_postings\models.py:53
 msgid "Company"
 msgstr "Компания"
 
-#: job_postings/models.py:15 job_postings/templates/companies/list.html:12
-#: job_postings/templates/navigation.html:24
+#: .\job_postings\models.py:24 .\job_postings\templates\companies\list.html:5
+#: .\job_postings\templates\footer.html:14
+#: .\job_postings\templates\navigation.html:24
 msgid "Companies"
 msgstr "Компании"
 
-#: job_postings/models.py:26
+#: .\job_postings\models.py:36
 msgid "Category"
 msgstr "Категория"
 
-#: job_postings/models.py:27 job_postings/templates/navigation.html:34
+#: .\job_postings\models.py:37 .\job_postings\models.py:58
+#: .\job_postings\templates\categories\list.html:5
+#: .\job_postings\templates\footer.html:24
+#: .\job_postings\templates\navigation.html:34
 msgid "Categories"
 msgstr "Категории"
 
-#: job_postings/models.py:33
+#: .\job_postings\models.py:44
 msgid "Title"
 msgstr "Заглавие"
 
-#: job_postings/models.py:53
+#: .\job_postings\models.py:45
+#: .\job_postings\templates\job_postings\detail.html:16
+msgid "Location"
+msgstr "Локация"
+
+#: .\job_postings\models.py:46
+#: .\job_postings\templates\job_postings\detail.html:24
+msgid "Salary"
+msgstr "Възнаграждение"
+
+#: .\job_postings\models.py:65
 msgid "Job Posting"
 msgstr "Обява за работа"
 
-#: job_postings/models.py:54 job_postings/templates/navigation.html:29
+#: .\job_postings\models.py:66 .\job_postings\templates\footer.html:19
+#: .\job_postings\templates\navigation.html:29
 msgid "Job Postings"
 msgstr "Обяви за работа"
+
+#: .\job_postings\templates\categories\detail.html:8
+#: .\job_postings\templates\companies\detail.html:18
+#: .\job_postings\templates\job_postings\list.html:5
+msgid "Job postings"
+msgstr "Обяви за работа"
+
+#: .\job_postings\templates\companies\detail.html:9
+msgid "Telephone"
+msgstr ""
+
+#: .\job_postings\templates\companies\detail.html:11
+#, fuzzy
+#| msgid "Web site"
+msgid "Website"
+msgstr "Уеб сайт"

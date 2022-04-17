@@ -2,9 +2,18 @@
 {% load static i18n %}
 
 {% block content %}
+  <article>
   <h1>{{ company.name }}</h1>
 
+  <p>
+    {% trans "E-mail" %}: <a href="mailto:{{ company.email }}">{{ company.email }}</a><br>
+    {% trans "Telephone" %}: <a href="tel:{{ company.phone }}">{{ company.phone }}</a><br>
+    {% trans "Address" %}: {{ company.address }}<br>
+    {% trans "Website" %}: <a href="{{ company.website }}">{{ company.website }}</a><br>
+  </p>
+
   <p>{{ company.description | safe }}</p>
+  </article>
 
   {% if company_postings.count %}
     <h2>{% trans "Job postings" %}</h2>

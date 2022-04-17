@@ -2,7 +2,7 @@
 {% load static i18n %}
 
 {% block content %}
-<div class="card mt-4">
+<article class="card mt-4">
   <div class="card-body">
     <h1 class="card-title">{{ job_posting.title }}</h1>
     <a href="{% url 'company_detail' job_posting.company.id %}">
@@ -35,5 +35,5 @@
     >
     {% endfor %}
   </div>
-</div>
+</article>
 {% endblock content %}
